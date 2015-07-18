@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-
   protected
 
   def configure_permitted_parameters

@@ -49,6 +49,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -127,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   devise
+  faker
   pg
   rails (= 4.2.3)
   rails-api

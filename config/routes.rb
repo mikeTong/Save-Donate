@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  get 'advertisements/create'
 
-  get 'advertisements/destroy'
+  get 'organizations/create'
 
-  get 'advertisements/show'
+  get 'organizations/destroy'  
 
   get 'donations/create'
 
   get 'donations/destroy'
+  
+  resources :advertisements, only: [:index, :show, :destoy, :create] do
+    resources :coupons, only: [:create, :destoy]
+  end
+  get 'advertisements/:id/get_code', to: 'advertisements#generate_code'
+  patch 'advertisements/view_ad', to: "advertisements#view_ad"
+
+  root to: 'advertisements#index'
 
   devise_for :organizations
   devise_for :companies
