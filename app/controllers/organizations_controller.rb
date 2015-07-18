@@ -33,5 +33,6 @@ class OrganizationsController < Devise::RegistrationsController
   protected 
 
   def organization_params
+    params.require(:organization).permit(:email, :password, :name, :phone, :description, :short_description)
   end
 end
