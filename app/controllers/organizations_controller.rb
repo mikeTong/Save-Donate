@@ -19,4 +19,5 @@ class OrganizationsController < Devise::RegistrationsController
       render json: {error: "You need to sign in or sign up before continuing."}
     end    
   end
+
 end
