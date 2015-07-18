@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root to: 'advertisements#index'
 
   devise_for :organizations,
-             :controllers => {:registrations => "organizations"}
+             :controllers => {:registrations => "organizations", :sessions => "organization_sessions"}
   devise_for :companies,
              :controllers => {:registrations => "companies"}
   # The priority is based upon order of creation: first created -> highest priority.
