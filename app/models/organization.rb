@@ -8,4 +8,11 @@ class Organization < ActiveRecord::Base
   has_many :advertisements
   has_many :companies, through: :donations
   has_one :advertisement
+
+  validates :short_description, length: { maximum: 30 }  
+  validates :description, length: { maximum: 500 }
+  validates :name, presence: true
+  
+
+
 end

@@ -4,6 +4,10 @@ class Advertisement < ActiveRecord::Base
 
   before_create :default_values
 
+  validates :url, presence: true
+
+
+
   private
 
   def default_values
