@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '4.2.3'
+gem 'rails', '4.1.7'
 
 gem 'rails-api'
 
@@ -16,7 +16,7 @@ group :production do
 end
 
 gem 'devise'
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.8.0'
 gem 'simple_token_authentication', '~> 1.0'
 gem 'faker'
 

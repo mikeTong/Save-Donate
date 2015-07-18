@@ -1,22 +1,19 @@
-Rails.application.routes.draw do
-
-  get 'organizations/create'
-
-  get 'organizations/destroy'  
+Rails.application.routes.draw do 
 
   get 'donations/create'
 
   get 'donations/destroy'
   
   resources :advertisements, only: [:index, :show, :destoy, :create] do
-    resources :coupons, only: [:create, :destoy]
+    resources :coupons, only: [:create, :destroy]
   end
   get 'advertisements/:id/get_code', to: 'advertisements#generate_code'
   patch 'advertisements/view_ad', to: "advertisements#view_ad"
 
   root to: 'advertisements#index'
 
-  devise_for :organizations
+  devise_for :organizations,
+             :controllers => {:registrations => "organizations"}
   devise_for :companies
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -2,7 +2,7 @@ class AdvertisementsController < ApplicationController
 
   def index
     @advertisements = Advertisement.all
-    render json: @advertisements
+    render json: @advertisements, root: false
   end
 
   def create
@@ -26,7 +26,7 @@ class AdvertisementsController < ApplicationController
   def show
     @advertisement = Advertisement.find(params[:id])
 
-    render json: @advertisement
+    render json: @advertisement, root: false
   end
 
   def view_ad

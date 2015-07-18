@@ -1,7 +1,3 @@
-class OrganizationsController < ApplicationController
-  def create
-  end
-
-  def destroy
-  end
+class OrganizationsController < Devise::RegistrationsController
+  acts_as_token_authentication_handler_for Organization
 end
