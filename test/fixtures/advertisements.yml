@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  url: MyString
+  length: 1
+  count: 1
+  count: 1
+  count_history: 1
+
+two:
+  company_id: 1
+  url: MyString
+  length: 1
+  count: 1
+  count: 1
+  count_history: 1

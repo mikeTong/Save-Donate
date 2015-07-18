@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'advertisements/create'
+
+  get 'advertisements/destroy'
+
+  get 'advertisements/show'
+
+  get 'donations/create'
+
+  get 'donations/destroy'
+
+  devise_for :organizations
+  devise_for :companies
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
