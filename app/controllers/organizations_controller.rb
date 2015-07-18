@@ -19,11 +19,4 @@ class OrganizationsController < Devise::RegistrationsController
       render json: {error: "You need to sign in or sign up before continuing."}
     end    
   end
-
-  private
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u| 
-      u.permit(:name, :email, :password, :password_confirmation, :phone, :description, :short_description)
-    end
-  end
 end
