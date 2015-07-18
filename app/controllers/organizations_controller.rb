@@ -1,0 +1,3 @@
+class OrganizationsController < Devise::RegistrationsController
+  acts_as_token_authentication_handler_for Organization
+end
