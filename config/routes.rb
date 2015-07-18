@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   devise_for :organizations,
              :controllers => {:registrations => "organizations"}
-  devise_for :companies
+  devise_for :companies,
+             :controllers => {:registrations => "companies"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
