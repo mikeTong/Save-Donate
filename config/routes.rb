@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'donations/create'
 
   get 'donations/destroy'
+
+  get 'test', to: 'test#test'
   
   resources :advertisements, only: [:index, :show, :destoy, :create] do
     resources :coupons, only: [:create, :destroy]
