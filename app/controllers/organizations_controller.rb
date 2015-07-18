@@ -1,5 +1,6 @@
 class OrganizationsController < Devise::RegistrationsController
   skip_before_action :authenticate_scope!
+  before_action :print_header
 
   def destroy
     @organization = Organization.find_by_email(request.headers['X-Organization-Email'])
@@ -18,5 +19,11 @@ class OrganizationsController < Devise::RegistrationsController
     else
       render json: {error: "You need to sign in or sign up before continuing."}
     end    
+  end
+
+  protected
+
+  def print_header
+    logger.debug request.headers.inspect
   end
 end
