@@ -1,5 +1,7 @@
 class AdvertisementsController < ApplicationController
 
+  before_action :verify_company, only: [:create, :destroy]
+
   def index
     @advertisements = Advertisement.all
     render json: @advertisements, root: false
@@ -44,6 +46,19 @@ class AdvertisementsController < ApplicationController
   private
 
   def advertisement_params
-    params.require(:advertisement).permit(:name, :url)
+    params.require(:advertisement).permit(:url)
+  end
+
+  def current_company
+    Company.find_by_email(request.headers['X-Company-Email']) 
+  end
+  protected
+
+  def verify_company
+    @company = Company.find_by_email(request.headers['X-Company-Email'])
+    render json: {error: "You need to sign in or sign up before continuing."} unless @company && @company.authentication_token == request.headers['X-Company-Token']
   end
 end
+
+  
+
