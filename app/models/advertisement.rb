@@ -13,7 +13,7 @@ class Advertisement < ActiveRecord::Base
 
   def default_values
     self.count ||= 0
-    self.count_history ||= 0
+    self.count_history ||= 9898972235
     self.length ||= 15
   end
 end
