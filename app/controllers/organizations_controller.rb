@@ -11,10 +11,12 @@ class OrganizationsController < Devise::RegistrationsController
     end
   end
   
-  private
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u| 
-      u.permit(:name, :email, :password, :password_confirmation, :phone, :description, :short_description)
-    end
+  def show
+    @organization = Organization.find_by_email(request.headers['X-Organization-Email'])
+    if @organization && @organization.authentication_token == request.headers['X-Organization-Token']
+      render json: @organization
+    else
+      render json: {error: "You need to sign in or sign up before continuing."}
+    end    
   end
 end

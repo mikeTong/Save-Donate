@@ -1,6 +1,7 @@
 class Advertisement < ActiveRecord::Base
   has_one :coupon
   belongs_to :organization
+  belongs_to :company
 
   before_create :default_values
 
